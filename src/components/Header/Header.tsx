@@ -9,7 +9,7 @@ type Props = {
 
 export default function Header({ setQuery }: Props) {
   return (
-    <header className="sticky top-0 flex h-24 w-full bg-zinc-900">
+    <header className="sticky top-0 z-50 flex h-24 w-full bg-zinc-900">
       <div className="m-auto flex h-full w-full max-w-7xl items-center px-4">
         <Link href="/">
           <a>
