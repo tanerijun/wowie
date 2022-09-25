@@ -1,7 +1,13 @@
 import Image from "next/future/image";
 import Link from "next/link";
+import { Dispatch, SetStateAction } from "react";
+import SearchInput from "../SearchInput/SearchInput";
 
-export default function Header() {
+type Props = {
+  setQuery?: Dispatch<SetStateAction<string>>;
+};
+
+export default function Header({ setQuery }: Props) {
   return (
     <header className="sticky top-0 flex h-24 w-full bg-zinc-900">
       <div className="m-auto flex h-full w-full max-w-7xl items-center px-4">
@@ -29,6 +35,11 @@ export default function Header() {
             />
           </a>
         </Link>
+        {setQuery && (
+          <div className="relative flex flex-1 items-center justify-end">
+            <SearchInput setQuery={setQuery} />
+          </div>
+        )}
       </div>
     </header>
   );
