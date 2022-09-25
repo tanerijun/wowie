@@ -7,7 +7,7 @@ type Prop = {
 
 export default function Card({ imgUrl, title }: Prop) {
   return (
-    <div className="h-80">
+    <div className="h-80 cursor-pointer duration-300 hover:opacity-80">
       <div className="relative h-full">
         <Image
           placeholder="blur"

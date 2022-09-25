@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
-import { useState } from "react";
+import Link from "next/link";
+import React, { useState } from "react";
 import Card from "../src/components/Card/Card";
 import Grid from "../src/components/Grid/Grid";
 import Header from "../src/components/Header/Header";
@@ -18,10 +19,16 @@ const Home: NextPage = () => {
   const { data, fetchNextPage, isLoading, isFetching, error } =
     useFetchMovies(query);
 
-  console.log(data);
+  const handleScroll = (e: React.UIEvent<HTMLElement>) => {
+    const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
+
+    if (scrollHeight - scrollTop === clientHeight) {
+      fetchNextPage();
+    }
+  };
 
   return (
-    <div>
+    <div onScroll={handleScroll}>
       <Header setQuery={setQuery} />
       <main>
         {!query && data && data.pages && (
@@ -47,20 +54,23 @@ const Home: NextPage = () => {
             data.pages &&
             data.pages.map((page) =>
               page.results.map((movie) => (
-                <div key={movie.id}>
-                  <Card
-                    imgUrl={
-                      movie.poster_path
-                        ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
-                        : "/no_image.jpg"
-                    }
-                    title={movie.original_title}
-                  />
-                </div>
+                <Link key={movie.id} href={`/${movie.id}`}>
+                  <a>
+                    <Card
+                      imgUrl={
+                        movie.poster_path
+                          ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
+                          : "/no_image.jpg"
+                      }
+                      title={movie.original_title}
+                    />
+                  </a>
+                </Link>
               ))
             )}
         </Grid>
-        <Spinner />
+
+        {(isLoading || isFetching) && <Spinner />}
       </main>
     </div>
   );

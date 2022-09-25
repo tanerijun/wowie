@@ -28,8 +28,15 @@ export default function SearchInput({ setQuery }: Props) {
         placeholder="Search Movie"
         className="text-md h-10 rounded-full bg-zinc-700 p-4 pr-14 text-white focus:border focus:border-solid focus:border-cyan-200 focus:outline-none md:w-96"
       />
-      <div className="absolute right-4">
-        <Image width="30" height="32" src="/tmdb-logo.svg" alt="TMBD Logo" />
+      <div className="absolute right-4 h-8 w-8">
+        <Image
+          fill
+          sizes="32"
+          className="h-auto"
+          src="/tmdb-logo.svg"
+          alt="TMBD Logo"
+          priority
+        />
       </div>
     </>
   );
