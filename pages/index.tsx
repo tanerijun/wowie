@@ -46,7 +46,11 @@ const Home: NextPage = () => {
         <Grid
           title={
             query
-              ? `Search results: ${data?.pages[0].total_results}`
+              ? `Search results: ${
+                  data?.pages[0].total_results
+                    ? data.pages[0].total_results
+                    : "0"
+                }`
               : "Popular Movies"
           }
         >
