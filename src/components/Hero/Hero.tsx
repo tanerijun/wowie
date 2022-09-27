@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/future/image";
+import Image from "next/future/image";
 
 type Props = {
   imgUrl: string;

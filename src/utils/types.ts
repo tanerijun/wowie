@@ -23,4 +23,23 @@ type Movies = {
   total_results: number;
 };
 
-export type { Movie, Movies };
+type Cast = {
+  character: string;
+  credit_id: string;
+  name: string;
+  profile_path: string;
+};
+
+type Credits = {
+  id: number;
+  cast: Cast[];
+  crew: Crew[];
+};
+
+type Crew = {
+  job: string;
+  name: string;
+  credit_id: number;
+};
+
+export type { Cast, Credits, Crew, Movie, Movies };

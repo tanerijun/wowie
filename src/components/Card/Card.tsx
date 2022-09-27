@@ -3,9 +3,10 @@ import Image from "next/image";
 type Prop = {
   imgUrl: string;
   title: string;
+  subtitle?: string;
 };
 
-export default function Card({ imgUrl, title }: Prop) {
+export default function Card({ imgUrl, title, subtitle }: Prop) {
   return (
     <div className="h-80 cursor-pointer duration-300 hover:opacity-80">
       <div className="relative h-full">
@@ -21,6 +22,11 @@ export default function Card({ imgUrl, title }: Prop) {
           <h3 className="truncate text-center text-sm text-cyan-200">
             {title}
           </h3>
+          {subtitle && (
+            <p className="truncate text-center text-xs text-cyan-400">
+              {subtitle}
+            </p>
+          )}
         </div>
       </div>
     </div>

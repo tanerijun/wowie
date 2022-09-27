@@ -15,7 +15,6 @@ export default async function handler(
     : `${POPULAR_BASE_URL}&page=${page}`;
 
   try {
-    console.log("Inside try");
     const data = await basicFetch<Movies>(endpoint);
     res.status(200).json(data);
   } catch (e) {
