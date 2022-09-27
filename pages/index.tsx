@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../src/components/Card/Card";
 import ErrorPage from "../src/components/ErrorPage/ErrorPage";
 import Grid from "../src/components/Grid/Grid";
@@ -21,6 +21,7 @@ const Home: NextPage = () => {
     useFetchMovies(query);
 
   const handleScroll = (e: React.UIEvent<HTMLElement>) => {
+    console.log("in function");
     const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
 
     if (scrollHeight - scrollTop === clientHeight) {
@@ -33,7 +34,7 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div onScroll={handleScroll}>
+    <div onScroll={handleScroll} className="h-screen overflow-y-scroll">
       <Header setQuery={setQuery} />
       <main>
         {!query && data && data.pages && (
