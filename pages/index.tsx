@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import React, { useState } from "react";
 import Card from "../src/components/Card/Card";
+import ErrorPage from "../src/components/ErrorPage/ErrorPage";
 import Grid from "../src/components/Grid/Grid";
 import Header from "../src/components/Header/Header";
 import Hero from "../src/components/Hero/Hero";
@@ -26,6 +27,10 @@ const Home: NextPage = () => {
       fetchNextPage();
     }
   };
+
+  if (error) {
+    return <ErrorPage />;
+  }
 
   return (
     <div onScroll={handleScroll}>

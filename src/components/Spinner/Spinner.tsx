@@ -3,7 +3,7 @@ export default function Spinner() {
     <div className="m-4 flex items-center justify-center">
       <svg
         aria-hidden="true"
-        className="mr-2 h-8 w-8 animate-spin fill-cyan-200 text-zinc-400"
+        className="mr-2 h-8 w-8 animate-spin fill-cyan-200 text-transparent"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
