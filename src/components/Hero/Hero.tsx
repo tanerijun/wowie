@@ -17,7 +17,7 @@ export default function Hero({ imgUrl, title, text }: Props) {
         <Image
           priority
           fill
-          className="object-cover"
+          className="mask-image object-cover"
           src={imgUrl}
           alt="Hero Image"
         />

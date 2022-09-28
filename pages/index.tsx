@@ -32,7 +32,7 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div className="h-screen overflow-y-scroll">
+    <div className="container m-auto h-screen overflow-y-scroll">
       <Header setQuery={setQuery} />
       <main>
         {!query && data && data.pages && (
