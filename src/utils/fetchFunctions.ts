@@ -15,5 +15,5 @@ export const basicFetch = async <T>(endpoint: string): Promise<T> => {
 
 // Get data from Next backend
 export const fetchMovies = async (search = "", page = 1): Promise<Movies> => {
-  return await basicFetch<Movies>(`/api/movies?search=${search}&page={page}`);
+  return await basicFetch<Movies>(`/api/movies?search=${search}&page=${page}`);
 };
