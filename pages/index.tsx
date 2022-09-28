@@ -8,6 +8,7 @@ import Header from "../src/components/Header/Header";
 import Hero from "../src/components/Hero/Hero";
 import Spinner from "../src/components/Spinner/Spinner";
 import { useFetchMovies } from "../src/hooks/useFetchMovies";
+import { useInView } from "../src/hooks/useInView";
 import {
   IMAGE_BASE_URL,
   BACKDROP_SIZE,
@@ -16,25 +17,22 @@ import {
 
 const Home: NextPage = () => {
   const [query, setQuery] = useState("");
-
+  const [observedRef, isInView] = useInView();
   const { data, fetchNextPage, isLoading, isFetching, error } =
     useFetchMovies(query);
 
-  const handleScroll = (e: React.UIEvent<HTMLElement>) => {
-    console.log("in function");
-    const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
-
-    if (scrollHeight - scrollTop === clientHeight) {
+  useEffect(() => {
+    if (isInView) {
       fetchNextPage();
     }
-  };
+  }, [isInView, fetchNextPage]);
 
   if (error) {
     return <ErrorPage />;
   }
 
   return (
-    <div onScroll={handleScroll} className="h-screen overflow-y-scroll">
+    <div className="h-screen overflow-y-scroll">
       <Header setQuery={setQuery} />
       <main>
         {!query && data && data.pages && (
@@ -73,6 +71,7 @@ const Home: NextPage = () => {
                           : "/no_image.jpg"
                       }
                       title={movie.original_title}
+                      ref={observedRef}
                     />
                   </a>
                 </Link>
