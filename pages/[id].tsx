@@ -12,7 +12,6 @@ import Header from "../src/components/Header/Header";
 import MovieInfo from "../src/components/MovieInfo/MovieInfo";
 import Grid from "../src/components/Grid/Grid";
 import Card from "../src/components/Card/Card";
-import Breadcrumb from "../src/components/Breadcrumb/Breadcrumb";
 
 type Props = {
   movie: Movie;

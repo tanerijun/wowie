@@ -25,28 +25,14 @@ export default function Header({ setQuery, title }: Props) {
       >
         <Link href="/">
           <a>
-            <Image
-              width={150}
-              height={50}
-              className="hidden md:block"
-              src="/site-logo.svg"
-              alt="logo"
-              priority
-            />
+            <div>
+              <span className="text-3xl tracking-widest text-gray-50">
+                WOWIE
+              </span>
+            </div>
           </a>
         </Link>
-        <Link href="/">
-          <a>
-            <Image
-              width={50}
-              height={50}
-              className="md:hidden"
-              src="/site-logo-small.svg"
-              alt="small logo"
-              priority
-            />
-          </a>
-        </Link>
+
         <div className="relative flex flex-1 items-center justify-end">
           {setQuery && (
             <SearchInput
