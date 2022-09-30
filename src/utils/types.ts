@@ -28,6 +28,7 @@ type Cast = {
   credit_id: string;
   name: string;
   profile_path: string;
+  gender: 0 | 1 | 2 | 3; // Not specified, female, male, non-binary
 };
 
 type Credits = {

@@ -20,6 +20,9 @@ type Props = {
 };
 
 const Movie: NextPage<Props> = ({ movie, directors, casts }) => {
+  // DEBUG
+  console.log(casts);
+
   return (
     <div>
       <Header title={movie.original_title} logoLink="/" />
@@ -51,7 +54,9 @@ const Movie: NextPage<Props> = ({ movie, directors, casts }) => {
               imgUrl={
                 cast.profile_path
                   ? IMAGE_BASE_URL + POSTER_SIZE + cast.profile_path
-                  : "/no_image.jpg"
+                  : cast.gender === 2
+                  ? "/male-placeholder.jpg"
+                  : "/female-placeholder.jpg"
               }
               title={cast.name}
               subtitle={cast.character}
