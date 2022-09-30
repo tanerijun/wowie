@@ -21,7 +21,7 @@ export default function Header({ setQuery, title, logoLink }: Props) {
   return (
     <header className="sticky top-0 z-50 flex h-20 w-full bg-tmdb-primary-color bg-opacity-80 backdrop-blur-md">
       <div
-        className="m-auto flex h-full w-full max-w-7xl items-center px-4"
+        className="m-auto flex h-full w-full max-w-7xl items-center gap-2 px-4"
         onClick={handleLogoClick}
       >
         <Link href={`${logoLink}`}>
@@ -34,7 +34,7 @@ export default function Header({ setQuery, title, logoLink }: Props) {
           </a>
         </Link>
 
-        <div className="relative flex flex-1 items-center justify-end">
+        <div className="relative flex flex-1 items-center justify-end overflow-scroll">
           {setQuery && (
             <SearchInput
               setQuery={setQuery}

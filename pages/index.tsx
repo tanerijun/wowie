@@ -76,7 +76,7 @@ const Home: NextPage = () => {
                             ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
                             : "/no_image.jpg"
                         }
-                        title={movie.original_title}
+                        title={movie.title}
                         ref={observedRef}
                       />
                     </a>
