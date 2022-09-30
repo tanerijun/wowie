@@ -31,7 +31,7 @@ export default function MovieInfo({
 }: Props) {
   return (
     <div className="relative h-auto w-full p-4">
-      <div className="relative z-10 m-auto flex h-full min-h-128 max-w-7xl flex-col rounded-xl bg-zinc-800 bg-opacity-90 p-4 md:flex-row">
+      <div className="relative z-10 m-auto flex h-full min-h-128 max-w-7xl flex-col rounded-xl bg-zinc-800 bg-opacity-70 p-4 backdrop-blur-sm md:flex-row">
         <div className="relative h-96 w-full md:h-auto md:w-1/3">
           <Image
             placeholder="blur"
@@ -42,7 +42,7 @@ export default function MovieInfo({
             alt={`Poster of ${title}`}
           />
           {/* Make it Cyan with Glassmorphism */}
-          <div className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-sm font-bold text-black">
+          <div className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-full bg-zinc-700 bg-opacity-30 text-sm font-bold text-white backdrop-blur-sm">
             {rating.toFixed(1)}
           </div>
         </div>
@@ -83,6 +83,7 @@ export default function MovieInfo({
         objectFit="cover"
         objectPosition="center"
         layout="fill"
+        className="mask-image"
         src={backgroundImgUrl}
         alt={`Poster of ${title} as background`}
       />

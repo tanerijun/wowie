@@ -23,8 +23,7 @@ type Props = {
 const Movie: NextPage<Props> = ({ movie, directors, casts }) => {
   return (
     <div>
-      <Header />
-      <Breadcrumb title={movie.original_title} />
+      <Header title={movie.original_title} />
       <main>
         <MovieInfo
           thumbUrl={

@@ -1,15 +1,17 @@
 import Image from "next/future/image";
 import Link from "next/link";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import SearchInput from "../SearchInput/SearchInput";
 
 type Props = {
   setQuery?: Dispatch<SetStateAction<string>>;
+  title?: string;
 };
 
-export default function Header({ setQuery }: Props) {
+export default function Header({ setQuery, title }: Props) {
   return (
-    <header className="sticky top-0 z-50 flex h-24 w-full bg-zinc-900">
+    <header className="sticky top-0 z-50 flex h-20 w-full bg-zinc-900 bg-opacity-70 backdrop-blur-md">
       <div className="m-auto flex h-full w-full max-w-7xl items-center px-4">
         <Link href="/">
           <a>
@@ -35,11 +37,10 @@ export default function Header({ setQuery }: Props) {
             />
           </a>
         </Link>
-        {setQuery && (
-          <div className="relative flex flex-1 items-center justify-end">
-            <SearchInput setQuery={setQuery} />
-          </div>
-        )}
+        <div className="relative flex flex-1 items-center justify-end">
+          {setQuery && <SearchInput setQuery={setQuery} />}
+          {title && <Breadcrumb title={title} />}
+        </div>
       </div>
     </header>
   );
