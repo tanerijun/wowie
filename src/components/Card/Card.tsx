@@ -19,7 +19,7 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
         <div className="relative h-full shadow-lg">
           <Image
             placeholder="blur"
-            blurDataURL="/placeholder.jpg"
+            blurDataURL="/placeholder.png"
             className="rounded-md object-cover"
             layout="fill"
             src={imgUrl}

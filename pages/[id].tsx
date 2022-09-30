@@ -20,9 +20,6 @@ type Props = {
 };
 
 const Movie: NextPage<Props> = ({ movie, directors, casts }) => {
-  // DEBUG
-  console.log(casts);
-
   return (
     <div>
       <Header title={movie.original_title} logoLink="/" />

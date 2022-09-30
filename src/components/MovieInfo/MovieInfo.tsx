@@ -35,7 +35,7 @@ export default function MovieInfo({
         <div className="relative h-96 w-full md:h-auto md:w-1/3">
           <Image
             placeholder="blur"
-            blurDataURL="/placeholder.jpg"
+            blurDataURL="/placeholder.png"
             className="rounded-lg object-cover"
             layout="fill"
             src={thumbUrl}
@@ -78,7 +78,7 @@ export default function MovieInfo({
       <Image
         priority
         placeholder="blur"
-        blurDataURL="/placeholder.jpg"
+        blurDataURL="/placeholder.png"
         objectFit="cover"
         objectPosition="center"
         layout="fill"
