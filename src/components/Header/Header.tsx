@@ -27,7 +27,7 @@ export default function Header({ setQuery, title, logoLink }: Props) {
         <Link href={`${logoLink}`}>
           <a>
             <div>
-              <span className="bg-gradient-to-r from-tmdb-secondary-color to-tmdb-tetriary-color bg-clip-text text-lg tracking-widest text-transparent hover:bg-gradient-to-l md:text-3xl">
+              <span className="bg-gradient-to-r from-tmdb-secondary-color to-tmdb-tetriary-color bg-clip-text text-lg tracking-widest text-transparent hover:bg-gradient-to-l sm:text-3xl">
                 WOWIE
               </span>
             </div>
