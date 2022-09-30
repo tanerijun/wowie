@@ -11,7 +11,7 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
   ({ imgUrl, title, subtitle }, ref) => {
     return (
       <div
-        className={`h-80 duration-300 hover:opacity-80 ${
+        className={`h-128 duration-300 hover:opacity-80 sm:h-96 ${
           !subtitle && "cursor-pointer"
         }`}
         ref={ref}
