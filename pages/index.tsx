@@ -6,16 +6,11 @@ import Card from "../src/components/Card/Card";
 import ErrorPage from "../src/components/ErrorPage/ErrorPage";
 import Grid from "../src/components/Grid/Grid";
 import Header from "../src/components/Header/Header";
-import Hero from "../src/components/Hero/Hero";
 import HeroManager from "../src/components/HeroManager/HeroManager";
 import Spinner from "../src/components/Spinner/Spinner";
 import { useFetchMovies } from "../src/hooks/useFetchMovies";
 import { useInView } from "../src/hooks/useInView";
-import {
-  IMAGE_BASE_URL,
-  BACKDROP_SIZE,
-  POSTER_SIZE,
-} from "../src/utils/tmdbHelpers";
+import { IMAGE_BASE_URL, POSTER_SIZE } from "../src/utils/tmdbHelpers";
 
 const Home: NextPage = () => {
   const [query, setQuery] = useState("");
@@ -44,16 +39,6 @@ const Home: NextPage = () => {
         <main id="top">
           {!query && data && data.pages && (
             <HeroManager movies={data.pages[0].results} />
-            // <Hero
-            //   id={data.pages[0].results[0].id}
-            //   imgUrl={
-            //     data.pages[0].results[0].backdrop_path
-            //       ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${data.pages[0].results[0].backdrop_path}`
-            //       : "/no_image.jpg"
-            //   }
-            //   title={data.pages[0].results[0].title}
-            //   text={data.pages[0].results[0].overview}
-            // />
           )}
 
           <Grid

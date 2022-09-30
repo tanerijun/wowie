@@ -1,4 +1,3 @@
-import Image from "next/future/image";
 import Link from "next/link";
 import { Dispatch, SetStateAction, useState } from "react";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
