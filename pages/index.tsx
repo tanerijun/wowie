@@ -33,8 +33,8 @@ const Home: NextPage = () => {
 
   return (
     <div className="h-screen overflow-y-scroll">
-      <Header setQuery={setQuery} />
-      <main>
+      <Header setQuery={setQuery} logoLink="#top" />
+      <main id="top">
         {!query && data && data.pages && (
           <Hero
             imgUrl={

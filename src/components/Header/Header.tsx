@@ -7,9 +7,10 @@ import SearchInput from "../SearchInput/SearchInput";
 type Props = {
   setQuery?: Dispatch<SetStateAction<string>>;
   title?: string;
+  logoLink: string;
 };
 
-export default function Header({ setQuery, title }: Props) {
+export default function Header({ setQuery, title, logoLink }: Props) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleLogoClick = () => {
@@ -23,7 +24,7 @@ export default function Header({ setQuery, title }: Props) {
         className="m-auto flex h-full w-full max-w-7xl items-center px-4"
         onClick={handleLogoClick}
       >
-        <Link href="/">
+        <Link href={`${logoLink}`}>
           <a>
             <div>
               <span className="bg-gradient-to-r from-tmdb-secondary-color to-tmdb-tetriary-color bg-clip-text text-3xl tracking-widest text-transparent">
