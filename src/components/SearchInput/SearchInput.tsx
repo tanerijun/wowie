@@ -1,19 +1,17 @@
 import Image from "next/future/image";
-import {
-  ChangeEvent,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useRef, useState } from "react";
 
 type Props = {
   setQuery: Dispatch<SetStateAction<string>>;
+  searchQuery: string;
+  setSearchQuery: Dispatch<SetStateAction<string>>;
 };
 
-export default function SearchInput({ setQuery }: Props) {
-  const [searchQuery, setSearchQuery] = useState("");
+export default function SearchInput({
+  setQuery,
+  searchQuery,
+  setSearchQuery,
+}: Props) {
   const timer = useRef<NodeJS.Timeout>();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
