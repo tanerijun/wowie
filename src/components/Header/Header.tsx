@@ -18,7 +18,7 @@ export default function Header({ setQuery, title }: Props) {
   };
 
   return (
-    <header className="sticky top-0 z-50 flex h-20 w-full bg-zinc-900 bg-opacity-70 backdrop-blur-md">
+    <header className="sticky top-0 z-50 flex h-20 w-full bg-tmdb-primary-color bg-opacity-80 backdrop-blur-md">
       <div
         className="m-auto flex h-full w-full max-w-7xl items-center px-4"
         onClick={handleLogoClick}
@@ -26,7 +26,7 @@ export default function Header({ setQuery, title }: Props) {
         <Link href="/">
           <a>
             <div>
-              <span className="text-3xl tracking-widest text-gray-50">
+              <span className="bg-gradient-to-r from-tmdb-secondary-color to-tmdb-tetriary-color bg-clip-text text-3xl tracking-widest text-transparent">
                 WOWIE
               </span>
             </div>

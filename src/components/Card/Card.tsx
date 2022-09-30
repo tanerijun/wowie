@@ -25,7 +25,7 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
             src={imgUrl}
             alt={`Poster of ${title}`}
           />
-          <div className="absolute bottom-0 w-full rounded-b-md bg-zinc-800 bg-opacity-60 px-4 py-2 backdrop-blur-sm">
+          <div className="absolute bottom-0 w-full rounded-b-md bg-tmdb-primary-color bg-opacity-40 px-4 py-2 backdrop-blur-sm">
             <h3 className="truncate text-center text-sm text-cyan-200">
               {title}
             </h3>

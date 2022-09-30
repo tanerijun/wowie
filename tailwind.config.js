@@ -15,6 +15,11 @@ module.exports = {
       gridTemplateColumns: {
         "auto-fill": "repeat(auto-fill, minmax(200px, 1fr))",
       },
+      colors: {
+        "tmdb-primary-color": "#0d253f",
+        "tmdb-secondary-color": "#01b4e4",
+        "tmdb-tetriary-color": "#90cea1",
+      },
     },
     fontFamily: {
       raleway: ["Raleway", "sans-serif"],
