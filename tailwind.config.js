@@ -24,12 +24,12 @@ module.exports = {
         "background-fade": {
           "0%": { opacity: 0 },
           "5%": { opacity: 1 },
-          "95%": { opacity: 1 },
-          "100%": { opacity: 0 },
+          "93%": { opacity: 1 },
+          "97%": { opacity: 0 },
         },
       },
       animation: {
-        "background-animation": "background-fade 10s linear",
+        "background-animation": "background-fade 11s linear",
       },
     },
     fontFamily: {
