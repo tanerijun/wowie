@@ -36,3 +36,7 @@ Finally, clicking on a movie title brings you to a page containing the details o
    ```
    pnpm dev
    ```
+
+### Demo
+
+The site is live [here](https://wowie-tanerijun.vercel.app)
