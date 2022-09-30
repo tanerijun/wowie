@@ -59,7 +59,7 @@ const Movie: NextPage<Props> = ({ movie, directors, casts }) => {
                   : "/female-placeholder.jpg"
               }
               title={cast.name}
-              subtitle={cast.character}
+              subtitle={cast.character ? cast.character : "Unknown"}
             />
           ))}
         </Grid>
