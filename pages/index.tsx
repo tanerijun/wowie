@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Card from "../src/components/Card/Card";
@@ -32,56 +33,62 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div className="h-screen overflow-y-scroll">
-      <Header setQuery={setQuery} logoLink="#top" />
-      <main id="top">
-        {!query && data && data.pages && (
-          <Hero
-            imgUrl={
-              data.pages[0].results[0].backdrop_path
-                ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${data.pages[0].results[0].backdrop_path}`
-                : "/no_image.jpg"
+    <>
+      <Head>
+        <title>WOWIE</title>
+        <meta name="description" content="A movie database powered by TMDB" />
+      </Head>
+      <div className="h-screen overflow-y-scroll">
+        <Header setQuery={setQuery} logoLink="#top" />
+        <main id="top">
+          {!query && data && data.pages && (
+            <Hero
+              imgUrl={
+                data.pages[0].results[0].backdrop_path
+                  ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${data.pages[0].results[0].backdrop_path}`
+                  : "/no_image.jpg"
+              }
+              title={data.pages[0].results[0].title}
+              text={data.pages[0].results[0].overview}
+            />
+          )}
+
+          <Grid
+            title={
+              query
+                ? `Search results: ${
+                    data?.pages[0].total_results
+                      ? data.pages[0].total_results
+                      : "0"
+                  }`
+                : "Popular Movies"
             }
-            title={data.pages[0].results[0].title}
-            text={data.pages[0].results[0].overview}
-          />
-        )}
+          >
+            {data &&
+              data.pages &&
+              data.pages.map((page) =>
+                page.results.map((movie) => (
+                  <Link key={movie.id} href={`/${movie.id}`}>
+                    <a>
+                      <Card
+                        imgUrl={
+                          movie.poster_path
+                            ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
+                            : "/no_image.jpg"
+                        }
+                        title={movie.original_title}
+                        ref={observedRef}
+                      />
+                    </a>
+                  </Link>
+                ))
+              )}
+          </Grid>
 
-        <Grid
-          title={
-            query
-              ? `Search results: ${
-                  data?.pages[0].total_results
-                    ? data.pages[0].total_results
-                    : "0"
-                }`
-              : "Popular Movies"
-          }
-        >
-          {data &&
-            data.pages &&
-            data.pages.map((page) =>
-              page.results.map((movie) => (
-                <Link key={movie.id} href={`/${movie.id}`}>
-                  <a>
-                    <Card
-                      imgUrl={
-                        movie.poster_path
-                          ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
-                          : "/no_image.jpg"
-                      }
-                      title={movie.original_title}
-                      ref={observedRef}
-                    />
-                  </a>
-                </Link>
-              ))
-            )}
-        </Grid>
-
-        {(isLoading || isFetching) && <Spinner />}
-      </main>
-    </div>
+          {(isLoading || isFetching) && <Spinner />}
+        </main>
+      </div>
+    </>
   );
 };
 

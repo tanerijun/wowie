@@ -12,6 +12,7 @@ import Header from "../src/components/Header/Header";
 import MovieInfo from "../src/components/MovieInfo/MovieInfo";
 import Grid from "../src/components/Grid/Grid";
 import Card from "../src/components/Card/Card";
+import Head from "next/head";
 
 type Props = {
   movie: Movie;
@@ -22,6 +23,9 @@ type Props = {
 const Movie: NextPage<Props> = ({ movie, directors, casts }) => {
   return (
     <div>
+      <Head>
+        <title>{`WOWIE - ${movie.title}`}</title>
+      </Head>
       <Header title={movie.original_title} logoLink="/" />
       <main>
         <MovieInfo
