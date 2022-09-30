@@ -17,7 +17,7 @@ export default function Breadcrumb({ title }: Props) {
         </Link>
         <span className="block px-2">|</span>
         <a href="#">
-          <span className="cursor-pointer truncate font-bold duration-300 hover:text-cyan-200">
+          <span className="cursor-pointer truncate font-bold hover:text-cyan-200">
             {title}
           </span>
         </a>
