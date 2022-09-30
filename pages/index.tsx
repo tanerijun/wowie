@@ -35,7 +35,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>WOWIE</title>
+        <title>WOWIE - Movie Database</title>
         <meta name="description" content="A movie database powered by TMDB" />
       </Head>
       <div className="h-screen overflow-y-scroll">
