@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 
 export default function Hero({ id, imgUrl, title, text }: Props) {
   return (
-    <section className="h-128 min-w-full">
+    <section className="h-128 min-w-full animate-background-animation">
       <div className="relative m-auto flex h-full flex-col-reverse pb-12 text-center md:px-36 md:text-left">
         <div className="z-10 flex max-w-2xl flex-col px-4 text-gray-50">
           <Link href={`/${id}`}>
@@ -22,7 +22,7 @@ export default function Hero({ id, imgUrl, title, text }: Props) {
         </div>
         <Image
           priority
-          fill
+          layout="fill"
           className="mask-image object-cover"
           src={imgUrl}
           alt="Hero Image"

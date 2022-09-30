@@ -20,6 +20,17 @@ module.exports = {
         "tmdb-secondary-color": "#01b4e4",
         "tmdb-tetriary-color": "#90cea1",
       },
+      keyframes: {
+        "background-fade": {
+          "0%": { opacity: 0 },
+          "5%": { opacity: 1 },
+          "95%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+      },
+      animation: {
+        "background-animation": "background-fade 10s linear",
+      },
     },
     fontFamily: {
       raleway: ["Raleway", "sans-serif"],
