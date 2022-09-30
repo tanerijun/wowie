@@ -43,6 +43,7 @@ const Home: NextPage = () => {
         <main id="top">
           {!query && data && data.pages && (
             <Hero
+              id={data.pages[0].results[0].id}
               imgUrl={
                 data.pages[0].results[0].backdrop_path
                   ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${data.pages[0].results[0].backdrop_path}`

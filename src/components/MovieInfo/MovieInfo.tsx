@@ -41,7 +41,7 @@ export default function MovieInfo({
             src={thumbUrl}
             alt={`Poster of ${title}`}
           />
-          <div className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-full bg-tmdb-primary-color bg-opacity-70 text-sm font-bold text-white backdrop-blur-sm">
+          <div className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-full bg-tmdb-primary-color bg-opacity-70 text-sm font-bold text-gray-100 backdrop-blur-sm">
             {rating.toFixed(1)}
           </div>
         </div>
